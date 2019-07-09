@@ -1,7 +1,7 @@
 {
-  "name": "tailwindcss-plugin-name",
+  "name": "tailwindcss-outline-offset",
   "version": "0.1.0",
-  "description": "",
+  "description": "A Tailwind CSS plugin for adding utilities for 'outline-offset' rules.",
   "main": "index.js",
   "scripts": {
     "test": "jest"

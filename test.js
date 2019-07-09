@@ -5,7 +5,13 @@ const tailwindcss = require('tailwindcss')
 
 function tailwindConfig(options) {
   return {
-    theme: {},
+    theme: {
+      outlineOffset: {
+        1: '1px',
+        2: '2px',
+        4: '4px'
+      }
+    },
     corePlugins: false,
     plugins: [plugin(options)]
   }
@@ -25,11 +31,19 @@ expect.extend({
   toMatchCss: cssMatcher
 })
 
-test('it generates the default classes', () => {
+test('it generates the offset classses based on config', () => {
   generatePluginCss().then(css => {
     expect(css).toMatchCss(`
-      .test {
-        display: block
+      .outline-offset-1 {
+        outline-offset: 1px;
+      }
+
+      .outline-offset-2 {
+        outline-offset: 2px;
+      }
+
+      .outline-offset-4 {
+        outline-offset: 4px;
       }
     `)
   })

@@ -9,26 +9,24 @@ function tailwindConfig(options) {
       outlineOffset: {
         1: '1px',
         2: '2px',
-        4: '4px'
-      }
+        4: '4px',
+      },
     },
     corePlugins: false,
-    plugins: [plugin(options)]
+    plugins: [plugin(options)],
   }
 }
 
-const generatePluginCss = (options = {}) => {
-  return postcss(
-    tailwindcss(tailwindConfig())
-  )
-  .process('@tailwind utilities;', {
-    from: undefined
-  })
-  .then(result => result.css)
+const generatePluginCss = () => {
+  return postcss(tailwindcss(tailwindConfig()))
+    .process('@tailwind utilities;', {
+      from: undefined,
+    })
+    .then(result => result.css)
 }
 
 expect.extend({
-  toMatchCss: cssMatcher
+  toMatchCss: cssMatcher,
 })
 
 test('it generates the offset classses based on config', () => {

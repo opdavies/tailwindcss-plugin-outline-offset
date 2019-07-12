@@ -4,7 +4,8 @@
   "description": "A Tailwind CSS plugin for adding utilities for 'outline-offset' rules.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "style": "eslint .",
+    "test": "jest && eslint ."
   },
   "keywords": [
     "tailwindcss-plugin"
@@ -12,9 +13,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-postcss": "^2.0.2",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "jest-matcher-css": "^1.1.0",
     "postcss": "^7.0.17",
+    "prettier": "^1.18.2",
     "tailwindcss": "^1.0.4"
   }
 }

@@ -12,9 +12,9 @@ test('it generates the offset classses based on config', () => {
       outlineOffset: {
         1: '1px',
         2: '2px',
-        4: '4px'
-      }
-    }
+        4: '4px',
+      },
+    },
   }
 
   const output = `
